@@ -1,0 +1,181 @@
+:root {
+    --clr-wall: #fff;
+    --clr-sidebar: #ff5e00;
+    --clr-hover: #cc4b00;
+    --clr-click: #ff5e00;
+    --clr-black: #000;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 1em Arial;
+}
+
+body {
+    background-color: var(--clr-black);
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+canvas {
+    background-color: var(--clr-sidebar);
+    aspect-ratio: 1 / 1;
+    margin: 2em auto;
+    overflow: scroll;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 200px;
+    min-width: 200px;
+}
+
+.sidebar {
+    background-color: var(--clr-sidebar);
+    height: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+
+.clicked {
+    background-color: var(--clr-click) !important;
+}
+
+#tab_selector {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tab_button {
+    border-radius: 0px;
+    margin: 0px !important;
+    width: 100%;
+    border: 1px solid var(--clr-sidebar);
+    background-color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.tab_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-wall);
+    width: 75%;
+    border-radius: 15px;
+    padding: 15px 5px;
+    margin: auto;
+}
+
+.tab_content > *, #grid_size_input {
+    width: 100px !important;
+    margin 5px;
+}
+
+.tab_content button, .editLabel {
+    background_color: white;
+    margin: 5px 0 5px 0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    background: var(--clr-sidebar);
+}
+
+#grid_size_input {
+    width: 50px;
+    margin: 5px 0px;
+}
+
+#grid_size_input_label {
+    color: var(--clr-black);
+}
+
+#search_tab {
+    display: flex;
+}
+
+#new_maze_tab, #edit_tab {
+    display: none;
+}
+
+#editLabel * {
+    cursor: pointer;
+}
+
+button, .editLabel {
+    user-select: none;
+    cursor: pointer;
+}
+
+button:hover, .editLabel:hover {
+    background-color: var(--clr-hover);
+}
+
+button:active, .editLabel:active {
+    background-color: var(--clr-click);
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+    canvas {
+        width: 100%;
+        height: 60%;
+    }
+
+    .controls {
+        fle-direction: row;
+        width: 100%;
+        height: 130px;
+        min-height: 130px;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tab_content {
+        flex-direction: row;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #grid_size_input {
+        width: 50%;
+    }
+
+    .tab_content * {
+        width: auto;
+        margin: 5px;
+    }
+
+    .tab_button {
+        width: 100%;
+        height: 100%;
+    }
+
+    #tab_selector {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align_items: flex-end;
+    }
+}

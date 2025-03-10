@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MAZE SOLVER</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <script type="module" src="scripts/script.js" defer></script>
+    </head>
+    <body>
+        <div class="controls">
+            <div id="tab_selector">
+                <button id="search_tab_button" class="tab_button clicked">Search</button>
+                <button id="edit_tab_button" class="tab_button">Edit</button>
+                <button id="new_maze_tab_button" class="tab_button">Create</button>
+            </div>
+            <div class="sidebar">
+                <div id="search_tab" class="tab_content">
+                    <button id="breadthButton">Breadth</button>
+                    <button id="depthButton">Depth First</button>
+                </div>
+                <div id="edit_tab" class="tab_content">
+                    <label class="editLabel" for="wall">
+                        <input type="radio" name="tileSelector" id="wall" value="0" checked>
+                        Wall
+                    </label>
+                    <label class="editLabel" for="empty">
+                        <input type="radio" name="tileSelector" id="empty" value="1">
+                        Path
+                    </label>
+                    <label class="editLabel" for="start">
+                        <input type="radio" name="tileSelector" id="start" value="2">
+                        Start
+                    </label>
+                    <label class="editLabel" for="end">
+                        <input type="radio" name="tileSelector" id="end" value="3">
+                        End
+                    </label>
+                </div>
+                <div id="new_maze_tab" class="tab_content">
+                    <button id="empty_button">Empty</button>
+                    <button id="random_dfs_button">Depth</button>
+                    <button id="prims_button">Prim's</button>
+                    <button id="kruskals_button">Kruskal's</button>
+                    <label id="grid_size_input_label" for="grid_size_input">Grid Size:
+                        <input id="grid_size_input" type="number">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <canvas width="700" height="700"></canvas>
+    </body>
+</html>
